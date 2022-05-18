@@ -1,0 +1,14 @@
+{
+  "name": "mern-shop",
+  "version": "1.0.0",
+  "description": "MERN shopping cart web",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "author": "Enzheng",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
