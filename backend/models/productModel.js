@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+
 const reviewSchema = mongoose.Schema(
   {
     name: { type: String, required: true },
@@ -9,61 +10,61 @@ const reviewSchema = mongoose.Schema(
     timestamps: true,
   },
 )
+
 const productSchema = mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      require: true,
+      required: true,
       ref: 'User',
     },
     name: {
       type: String,
-      require: true,
-      unique: true,
+      required: true,
     },
     image: {
       type: String,
-      require: true,
+      required: true,
     },
     brand: {
       type: String,
-      require: true,
+      required: true,
     },
     category: {
       type: String,
-      require: true,
+      required: true,
     },
     description: {
       type: String,
-      require: true,
+      required: true,
     },
     reviews: [reviewSchema],
     rating: {
-      type: String,
-      require: true,
+      type: Number,
+      required: true,
       default: 0,
     },
     numReviews: {
-      type: number,
-      require: true,
+      type: Number,
+      required: true,
       default: 0,
     },
     price: {
-      type: number,
-      require: true,
+      type: Number,
+      required: true,
       default: 0,
     },
     countInStock: {
-      type: number,
-      require: true,
+      type: Number,
+      required: true,
       default: 0,
     },
   },
   {
-    timestames: true,
+    timestamps: true,
   },
 )
 
-const Product = mongoose.model('Product', ProductSchema)
+const Product = mongoose.model('Product', productSchema)
 
 export default Product
