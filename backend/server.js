@@ -2,7 +2,9 @@ import express from 'express'
 import dotenv from 'dotenv'
 import colors from 'colors'
 import connnectDB from './config/db.js'
-import products from './data/products.js'
+// import products from './data/products.js'
+
+import productRoutes from './route/productRoutes'
 dotenv.config()
 
 connnectDB()
@@ -13,6 +15,7 @@ app.get('/', (req, res) => {
   res.send('API is running...')
 })
 
+app.use('/api/products', productRoutes)
 app.get('/api/products', (req, res) => {
   res.json(products)
 })
